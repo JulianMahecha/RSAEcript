@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Julian Mahecha - Desarrollador</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="red-lighten-4" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo white-text">
+                < Jm />
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="https://github.com/JulianMahecha"><i
+                            class="material-icons fab fa-github white-text "></i></a></li>
+                <li><a href="https://www.instagram.com/lxestebanxl/"><i
+                            class="material-icons fab fa-instagram white-text"></i></a></li>
+            </ul>
+
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="https://github.com/JulianMahecha"><i class="material-icons fab fa-github grey-text ">
+                            Github</i></a></li>
+                <li><a href="https://www.instagram.com/lxestebanxl/"><i
+                            class="material-icons fab fa-instagram grey-text">
+                            Instagram</i></a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <div class="container" id="main">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 center">
+                    <div class="row">
+                        <div class="col s12" v-if="mostrar">
+                            <div class="row">
+                                <div class="progress">
+                                    <div class="indeterminate"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-field col s12">
+                            <input placeholder="Primer Primo" id="primo_uno" type="number" class="validate"
+                                v-model="primo_uno" disabled>
+                            <label for="primo_uno">Numero 1</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input placeholder="Segundo Primo" id="primo_dos" type="number" class="validate"
+                                v-model="primo_dos" disabled>
+                            <label for="primo_dos">Numero 2</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 center">
+                            <a class="waves-effect waves-light btn block" v-on:click="generar"
+                                v-on:mouseover="active = !active" v-on:mouseout="active = !active">Generar</a>
+                            <a class="waves-effect waves-light btn block" v-show="primo_uno"
+                                v-on:click="calcular">Calcular</a>
+                            <h6 v-if="active">Este proceso puede tomar unos cuantos segundos</h6>
+                            <div class="progress" v-if="active">
+                                <div class="indeterminate"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12" v-show="primo_uno && primo_dos">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="N Calculado" id="n" type="number" class="validate" v-model="n" disabled>
+                            <label for="n">n</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input placeholder="Phi Calculado" id="phi" type="number" class="validate" v-model="phi"
+                                disabled>
+                            <label for="calculoPhi">þ</label>
+                        </div>
+                        <div class="input-field col s12" v-show="e">
+                            <input placeholder="E Calculado" id="e" type="number" class="validate" v-model="e" disabled>
+                            <label for="e">e Calculado (Cumpliendo MCD(þ, e) = 1</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>
