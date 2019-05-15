@@ -32,6 +32,7 @@ new Vue({
             this.n = '';
             this.phi = '';
             this.e = '';
+            this.inv='';
             this.primo_uno = this.generaAleatorio();
             this.primo_dos = this.generaAleatorio();
             while (this.primo_uno == this.primo_dos) {
