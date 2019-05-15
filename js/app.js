@@ -6,7 +6,7 @@ new Vue({
         phi: '',
         primo_uno: '',
         primo_dos: '',
-        priv_inv:'',
+        inv:'',
         mostrar: false,
         active: false
     },
@@ -27,9 +27,6 @@ new Vue({
             while (this.mcdOperacion(this.phi, this.e) != 1) {
                 this.e = Math.trunc(Math.random() * (this.phi - 1) + 1);
             }
-
-            this.priv_inv = this.euclides(this.e, this.phi);
-            console.log(this.priv_inv)
         },
         generar: function () {
             this.n = '';
@@ -42,7 +39,7 @@ new Vue({
             }
         },
         generaAleatorio: function () {
-            let decOpt = 100000000;
+            let decOpt = 100;
             do {
                 primo = true;
                 n1 = Math.trunc(Math.ceil(Math.random() * decOpt)) + 1;
@@ -68,22 +65,22 @@ new Vue({
         encenderBoton: function () {
             this.mostrar = true;
         },
-        euclides: function (a, b) {
-            var iaux; //auxiliar
-            a = Math.abs(a); //tomamos valor absoluto
-            b = Math.abs(b);
-            var i1 = Math.max(a, b); //i1 = el más grande
-            var i2 = Math.min(a, b); //i2 = el más pequeño
-
-            do {
-                iaux = i2; //guardar divisor
-                i2 = i1 % i2; //resto pasa a divisor
-                i1 = iaux; //divisor pasa a dividendo
-            } while (i2 !== 0);
-            return i1; //ultimo resto no nulo
+        inverso(e, p){
+            let val=0;
+            do{
+                run = 1;
+                val+=1;
+                result = (val*e)%p
+                if(result==1){
+                    run=0;
+                    console.log(val);
+                    return val;
+                }
+            }while(run)
         },
         prueba: function () {
-            this.adv = true;
+            this.inv = this.inverso(this.e, this.phi);
+            console.log(this.inv)
         },
     }
 });

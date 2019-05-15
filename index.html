@@ -70,6 +70,8 @@
                                 v-on:mouseover="active = !active" v-on:mouseout="active = !active">Generar</a>
                             <a class="waves-effect waves-light btn block" v-show="primo_uno"
                                 v-on:click="calcular">Calcular</a>
+                            <a class="waves-effect waves-light btn block" v-show="primo_uno"
+                                v-on:click="prueba">Calcular</a>
                             <h6 v-if="active">Este proceso puede tomar unos cuantos segundos</h6>
                             <div class="progress" v-if="active">
                                 <div class="indeterminate"></div>
@@ -92,6 +94,11 @@
                         <div class="input-field col s12" v-show="e">
                             <input placeholder="E Calculado" id="e" type="number" class="validate" v-model="e" disabled>
                             <label for="e">e Calculado (Cumpliendo MCD(þ, e) = 1</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input placeholder="Inv Calculado" id="inv" type="number" class="validate" v-model="inv"
+                                disabled>
+                            <label for="inv">Inv Calculado</label>
                         </div>
                     </div>
                 </div>
