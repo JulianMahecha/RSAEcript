@@ -70,7 +70,7 @@
                                 v-on:mouseover="active = !active" v-on:mouseout="active = !active">Generar</a>
                             <a class="waves-effect waves-light btn block" v-show="primo_uno && primo_dos"
                                 v-on:click="calcular">Calcular</a>
-                           <!--  <h6 v-if="active">Este proceso puede tomar unos cuantos segundos</h6>
+                            <!--  <h6 v-if="active">Este proceso puede tomar unos cuantos segundos</h6>
                             <div class="progress" v-if="active">
                                 <div class="indeterminate"></div>
                             </div> -->
@@ -78,7 +78,7 @@
                     </div>
                     <div class="row">
                         <div class="col s12 center">
-                            <a class="waves-effect waves-light btn block" v-show="primo_uno" v-on:click="prueba"
+                            <a class="waves-effect waves-light btn block" v-show="primo_uno" v-on:click="calcInverso"
                                 v-if="e">Calcular Inverso</a>
                         </div>
                     </div>
@@ -103,6 +103,16 @@
                             <input placeholder="Inv Calculado" id="inv" type="number" class="validate" v-model="inv"
                                 disabled>
                             <label for="inv">Inv Calculado</label>
+                        </div>
+                        <div class="input-field col s12" v-show="inv">
+                            <input placeholder="Clave Publica" id="c_publica" type="text" class="validate"
+                                v-model="c_publica" disabled>
+                            <label for="inv">Clave Publica</label>
+                        </div>
+                        <div class="input-field col s12" v-show="inv">
+                            <input placeholder="Clave Privada" id="c_privada" type="text" class="validate"
+                                v-model="c_privada" disabled>
+                            <label for="inv">Clave Privada</label>
                         </div>
                     </div>
                 </div>
