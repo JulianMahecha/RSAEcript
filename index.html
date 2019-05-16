@@ -55,12 +55,12 @@
                         </div>
                         <div class="input-field col s12">
                             <input placeholder="Primer Primo" id="primo_uno" type="number" class="validate"
-                                v-model="primo_uno" disabled>
+                                v-model="primo_uno">
                             <label for="primo_uno">Numero 1</label>
                         </div>
                         <div class="input-field col s12">
                             <input placeholder="Segundo Primo" id="primo_dos" type="number" class="validate"
-                                v-model="primo_dos" disabled>
+                                v-model="primo_dos">
                             <label for="primo_dos">Numero 2</label>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                         <div class="col s12 center">
                             <a class="waves-effect waves-light btn block" v-on:click="generar"
                                 v-on:mouseover="active = !active" v-on:mouseout="active = !active">Generar</a>
-                            <a class="waves-effect waves-light btn block" v-show="primo_uno"
+                            <a class="waves-effect waves-light btn block" v-show="primo_uno && primo_dos"
                                 v-on:click="calcular">Calcular</a>
                            <!--  <h6 v-if="active">Este proceso puede tomar unos cuantos segundos</h6>
                             <div class="progress" v-if="active">

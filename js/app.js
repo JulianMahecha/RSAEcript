@@ -6,7 +6,7 @@ new Vue({
         phi: '',
         primo_uno: '',
         primo_dos: '',
-        inv:'',
+        inv: '',
         mostrar: false,
         active: false
     },
@@ -32,11 +32,22 @@ new Vue({
             this.n = '';
             this.phi = '';
             this.e = '';
-            this.inv='';
-            this.primo_uno = this.generaAleatorio();
-            this.primo_dos = this.generaAleatorio();
-            while (this.primo_uno == this.primo_dos) {
+            this.inv = '';
+            if (primo_uno && primo_dos) {
+                let r = confirm("Se borraran los datos");
+                if (r) {
+                    this.primo_uno = this.generaAleatorio();
+                    this.primo_dos = this.generaAleatorio();
+                    while (this.primo_uno == this.primo_dos) {
+                        this.primo_uno = this.generaAleatorio();
+                    }
+                }
+            } else {
                 this.primo_uno = this.generaAleatorio();
+                this.primo_dos = this.generaAleatorio();
+                while (this.primo_uno == this.primo_dos) {
+                    this.primo_uno = this.generaAleatorio();
+                }
             }
         },
         generaAleatorio: function () {
@@ -66,18 +77,18 @@ new Vue({
         encenderBoton: function () {
             this.mostrar = true;
         },
-        inverso(e, p){
-            let val=0;
-            do{
+        inverso(e, p) {
+            let val = 0;
+            do {
                 run = 1;
-                val+=1;
-                result = (val*e)%p
-                if(result==1){
-                    run=0;
+                val += 1;
+                result = (val * e) % p
+                if (result == 1) {
+                    run = 0;
                     console.log(val);
                     return val;
                 }
-            }while(run)
+            } while (run)
         },
         prueba: function () {
             this.inv = this.inverso(this.e, this.phi);
